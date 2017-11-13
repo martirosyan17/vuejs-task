@@ -1,0 +1,33 @@
+<div class="hello">
+    <h1>{{ msg }}</h1>
+    <h2>Get the latest price for a list of one or more currencies</h2>
+    <div class="container">
+        <form id="form-login" role="form" method="POST" @submit.prevent="calculate(data)">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="currency1">Currency 1</label>
+                        <select id="currency1" v-model="data.currency1">
+                            <option v-for="currency in currencies" v-bind:value="currency.value">
+                                {{ currency.text }}
+                            </option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="currency2">Currency 2</label>
+                        <select id="currency2" v-model="data.currency2">
+                            <option v-for="currency in currencies" v-bind:value="currency.value">
+                                {{ currency.text }}
+                            </option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit"">Calculate</button>
+        </form>
+    </div>
+</div>
